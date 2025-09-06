@@ -64,7 +64,7 @@ const Hero = () => {
 
           {/* Visual Element */}
           <div className="relative hero-visual -mt-20">
-            <img src="/src/assets/images/img1.png" alt="hero image" className="w-full h-auto" />
+            <img src="/images/img1.png" alt="hero image" className="w-full h-auto" />
           </div>
         </div>
 

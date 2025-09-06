@@ -46,7 +46,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <img src="/src/assets/images/logo.jpg" alt="logo" className="w-8 h-8 rounded-lg" />
+            <img src="/images/logo.jpg" alt="logo" className="w-8 h-8 rounded-lg" />
             <div>
               <h1 className="text-lg font-semibold">Namugambe Cissy</h1>
               <p className="text-xs text-text-secondary">Architect & Designer</p>

@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between">
           {/* Left side - Copyright */}
           <div className="flex items-center space-x-4 mb-6 md:mb-0">
-            <img src="/src/assets/images/logo.jpg" alt="logo" className="w-8 h-8 rounded-lg" />
+            <img src="/images/logo.jpg" alt="logo" className="w-8 h-8 rounded-lg" />
             <div className="text-sm text-text-secondary">
               <p>© {currentYear} Namugambe Cissy. All rights reserved.</p>
               <p className="flex items-center space-x-1">
