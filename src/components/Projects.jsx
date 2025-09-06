@@ -36,7 +36,7 @@ const Projects = () => {
       title: 'Reorganization and interior design of Tailoring workshop',
       category: 'Commercial',
       year: '2025',
-      image: '/src/assets/images/tailor1.png',
+      image: '/images/tailor1.png',
       description: 'The workshop required a complete reorganization and interior design to give their clients a feel of architecture.',
       role: 'Design consultant/interior designer',
       Year: 'May-June',
@@ -46,9 +46,9 @@ const Projects = () => {
       approach: 'Collaborated with the client to understand their vision, developed interior design concepts, and optimized space utilization.',
       outcome: 'Transformed the workshop into a vibrant and functional space that enhanced customer experience and increased foot traffic.',
       gallery: [
-        '/src/assets/images/tailor2.png',
-        '/src/assets/images/tailor3.png',
-        '/src/assets/images/tailor4.png'
+        '/images/tailor2.png',
+        '/images/tailor3.png',
+        '/images/tailor4.png'
       ],
       details: {
         client: 'ML Designs',
@@ -61,7 +61,7 @@ const Projects = () => {
       title: 'Extension of Canteen',
       category: 'Commercial',
       year: '2025',
-      image: '/src/assets/images/twet1.png',
+      image: '/images/twet1.png',
       description: 'With the growing number of parioshioners, the canteen required exterior dinning space where a few can dine outside.',
       role: 'Design consultant',
       Year: 'January-August',
@@ -71,9 +71,9 @@ const Projects = () => {
       approach: 'Conducted site analysis, developed design concepts that integrated with the existing structure, and selected durable materials for outdoor use.',
       outcome: 'Successfully added outdoor seating that increased overall capacity by 30% and enhanced the dining experience.',
       gallery: [
-        '/src/assets/images/twet2.png',
-        '/src/assets/images/twet3.png',
-        '/src/assets/images/twet4.png'
+        '/images/twet2.png',
+        '/images/twet3.png',
+        '/images/twet4.png'
       ],
       details: {
         client: 'KANSANGA TWEGATTE WOMEN\’S GROUP',
