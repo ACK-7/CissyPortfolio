@@ -43,7 +43,8 @@ const About = () => {
                 <p>
                   I'm passionate about creating architecture that responds to environmental challenges 
                   while enhancing human experience. My approach emphasizes research-driven design, 
-                  stakeholder collaboration, and innovative problem-solving.
+                  stakeholder collaboration, and innovative problem-solving to deliver projects that are
+                  not only aesthetically compelling but also functionally effective and sustainable.
                 </p>
               </div>
             </div>
