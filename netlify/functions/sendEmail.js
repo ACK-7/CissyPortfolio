@@ -9,7 +9,7 @@ const TO_EMAIL = "asiimac3@gmail.com"; // IMPORTANT: Change this to your email a
 // The email address you are sending from.
 // NOTE: This needs to be a verified domain on Resend,
 // but you can use onbarding@resend.dev for testing.
-const FROM_EMAIL = "onboarding@resend.dev";
+const FROM_EMAIL = "delivered@resend.dev";
 
 exports.handler = async (event) => {
   // We only care about POST requests
