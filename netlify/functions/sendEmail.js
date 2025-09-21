@@ -1,23 +1,22 @@
-
-const { Resend } = require('resend');
+const { Resend } = require("resend");
 
 // Make sure to set the RESEND_API_KEY environment variable in Netlify!
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // The email address you want to receive the contact form submissions on.
-const TO_EMAIL = 'asiimac3@gmail.com'; // IMPORTANT: Change this to your email address!
+const TO_EMAIL = "asiimac3@gmail.com"; // IMPORTANT: Change this to your email address!
 
 // The email address you are sending from.
 // NOTE: This needs to be a verified domain on Resend,
 // but you can use onbarding@resend.dev for testing.
-const FROM_EMAIL = 'onboarding@resend.dev';
+const FROM_EMAIL = "onboarding@resend.dev";
 
 exports.handler = async (event) => {
   // We only care about POST requests
-  if (event.httpMethod !== 'POST') {
+  if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
-      body: JSON.stringify({ message: 'Method Not Allowed' }),
+      body: JSON.stringify({ message: "Method Not Allowed" }),
     };
   }
 
@@ -27,7 +26,9 @@ exports.handler = async (event) => {
     if (!name || !email || !message) {
       return {
         statusCode: 400,
-        body: JSON.stringify({ message: 'Name, email, and message are required.' }),
+        body: JSON.stringify({
+          message: "Name, email, and message are required.",
+        }),
       };
     }
 
@@ -46,13 +47,13 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'Message sent successfully!' }),
+      body: JSON.stringify({ message: "Message sent successfully!" }),
     };
   } catch (error) {
     console.error("Error sending email:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: 'Error sending email.' }),
+      body: JSON.stringify({ message: "Error sending email." }),
     };
   }
 };
