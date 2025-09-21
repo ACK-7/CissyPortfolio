@@ -11,7 +11,7 @@ const Projects = () => {
       title: 'Renovation and expansion of Our Lady of Mount Carmel Church',
       category: 'Institutional',
       year: '2024',
-      image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/images/ch1.jpg',
       description: 'The church required more seating space and transformation into a modern church with Catholic windows',
       role: 'Design consultant/supervisor',
       Year: '2024 - 2026',
@@ -21,9 +21,12 @@ const Projects = () => {
       approach: 'Conducted site analysis, engaged with stakeholders, and developed design concepts that balanced tradition with contemporary needs.',
       outcome: 'Successfully expanded seating capacity by 40%, improved accessibility, and integrated sustainable design features.',
       gallery: [
-        'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1200'
+        '/images/ch2.jpg',
+        '/images/ch3.jpg',
+        '/images/ch4.jpg',
+        '/images/ch5.png',
+        '/images/ch6.png',
+        '/images/ch7.png'
       ],
       details: {
         client: 'Our Lady of Mount Carmel Church',
@@ -83,26 +86,29 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: 'Dormitory/Class block',
-      category: 'Institutional',
-      year: '2023-2025',
-      image: 'https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'The project was an arleady designed upper primary class/dormitory with roof designed not to clients satisfaction',
+      title: 'Family cottage',
+      category: 'Residential',
+      year: '2025',
+      image: '/images/cott1.png',
+      description: 'A family cottage located in a serene environment, designed to maximize natural light and ventilation while providing a cozy living space.',
       role: 'Design consultant/supervisor',
-      Year: '2023 - 2025',
-      duration: '2 years',
-      tags: ['Dormitory', 'Class Block', 'Renovation', 'Roof Design', 'Sustainable'],
-      problem: 'Redesign the roof to improve aesthetics, functionality, and sustainability while ensuring structural integrity.',
-      approach: 'Collaborated with structural engineers, developed new roof design concepts, and selected eco-friendly materials.',
-      outcome: 'Implemented a new roof design that enhanced the building\'s appearance, improved water drainage, and increased energy efficiency.',
+      Year: 'July - October',
+      duration: '4 months',
+      tags: ['Residential', 'Cottage', 'Sustainable Design', 'Natural Light'],
+      problem: 'Design a family cottage that blends with the natural surroundings and meets the clients\' needs for comfort and sustainability.',
+      approach: 'Engaged with the clients to understand their lifestyle, developed design concepts that emphasized natural light and ventilation, and selected eco-friendly materials.',
+      outcome: 'Created a cozy and sustainable cottage that enhanced the family\'s connection to nature while providing modern amenities.',
       gallery: [
-        'https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        'https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        'https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=1200'
+        '/images/cott1.png',
+        '/images/cott2.png',
+        '/images/cott3.png',
+        '/images/cott4.png',
+        '/images/cott5.png',
+        '/images/cott6.png'
       ],
       details: {
-        client: 'St. Kizito\'s Primary School',
-        location: 'Kansanga, Kampala',
+        client: 'Medical Doctor',
+        location: 'Mpigi, Kampala',
         software: 'ArchiCAD, TwinMotion'
       }
     }

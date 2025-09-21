@@ -250,8 +250,8 @@ export const useGsapAnimations = () => {
       })
     }
 
-    // Initialize animations after a short delay to ensure DOM is ready
-    const timer = setTimeout(initAnimations, 100)
+    // Initialize animations immediately to ensure they start on page load
+    const timer = setTimeout(initAnimations, 0)
 
     // Cleanup function
     return () => {

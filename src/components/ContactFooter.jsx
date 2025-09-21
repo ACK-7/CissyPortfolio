@@ -1,42 +1,53 @@
-import React, { useState } from 'react'
-import { Mail, Phone, MapPin, Linkedin, Github, Send, CheckCircle } from 'lucide-react'
+import React, { useState } from 'react';
+import { Mail, Phone, MapPin, Linkedin, Github, Send, CheckCircle, XCircle, Loader } from 'lucide-react';
 
 const ContactFooter = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: ''
-  })
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  });
+  
+  const [status, setStatus] = useState({
+    isSubmitting: false,
+    isSubmitted: false,
+    error: null,
+  });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    })
-  }
+    });
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    
-    // Create mailto link with form data
-    const subject = encodeURIComponent(formData.subject || 'Portfolio Inquiry')
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )
-    const mailtoLink = `namugcissy@gmail.com?subject=${subject}&body=${body}`
-    
-    // Open email client
-    window.location.href = mailtoLink
-    
-    // Show success message
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 5000)
-    
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' })
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ isSubmitting: true, isSubmitted: false, error: null });
+
+    try {
+      const response = await fetch('/.netlify/functions/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Something went wrong.');
+      }
+
+      setStatus({ isSubmitting: false, isSubmitted: true, error: null });
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus({ isSubmitting: false, isSubmitted: false, error: null }), 5000);
+
+    } catch (error) {
+      setStatus({ isSubmitting: false, isSubmitted: false, error: error.message });
+      setTimeout(() => setStatus({ isSubmitting: false, isSubmitted: false, error: null }), 7000);
+    }
+  };
 
   const contactInfo = [
     {
@@ -57,7 +68,7 @@ const ContactFooter = () => {
       value: 'Kansanga, Kampala',
       href: 'https://maps.app.goo.gl/eNQrhB3DmzzEVQdV8'
     }
-  ]
+  ];
 
   const socialLinks = [
     {
@@ -78,7 +89,7 @@ const ContactFooter = () => {
       href: 'https://behance.net/alexchen-architect',
       color: 'hover:text-blue-500'
     }
-  ]
+  ];
 
   return (
     <section id="contact" className="py-20">
@@ -98,10 +109,17 @@ const ContactFooter = () => {
           <div className="contact-form">
             <h3 className="text-2xl font-semibold mb-8">Send a Message</h3>
             
-            {isSubmitted && (
+            {status.isSubmitted && (
               <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-4 mb-6 flex items-center space-x-3">
                 <CheckCircle size={20} className="text-green-400" />
-                <span className="text-green-400">Message sent! Your email client should open shortly.</span>
+                <span className="text-green-400">Message sent successfully!</span>
+              </div>
+            )}
+
+            {status.error && (
+              <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-4 mb-6 flex items-center space-x-3">
+                <XCircle size={20} className="text-red-400" />
+                <span className="text-red-400">Error: {status.error}</span>
               </div>
             )}
 
@@ -118,7 +136,8 @@ const ContactFooter = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-surface border border-gray-700 rounded-lg focus:border-accent focus:outline-none transition-colors"
+                    disabled={status.isSubmitting}
+                    className="w-full px-4 py-3 bg-surface border border-gray-700 rounded-lg focus:border-accent focus:outline-none transition-colors disabled:opacity-50"
                     placeholder="Your full name"
                   />
                 </div>
@@ -133,25 +152,11 @@ const ContactFooter = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-surface border border-gray-700 rounded-lg focus:border-accent focus:outline-none transition-colors"
+                    disabled={status.isSubmitting}
+                    className="w-full px-4 py-3 bg-surface border border-gray-700 rounded-lg focus:border-accent focus:outline-none transition-colors disabled:opacity-50"
                     placeholder="your.email@example.com"
                   />
                 </div>
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-surface border border-gray-700 rounded-lg focus:border-accent focus:outline-none transition-colors"
-                  placeholder="Project inquiry, job opportunity, etc."
-                />
               </div>
 
               <div>
@@ -164,18 +169,24 @@ const ContactFooter = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={status.isSubmitting}
                   rows={6}
-                  className="w-full px-4 py-3 bg-surface border border-gray-700 rounded-lg focus:border-accent focus:outline-none transition-colors resize-vertical"
+                  className="w-full px-4 py-3 bg-surface border border-gray-700 rounded-lg focus:border-accent focus:outline-none transition-colors resize-vertical disabled:opacity-50"
                   placeholder="Tell me about your project, opportunity, or how we can collaborate..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full btn-primary flex items-center justify-center space-x-2 group"
+                disabled={status.isSubmitting}
+                className="w-full btn-primary flex items-center justify-center space-x-2 group disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                <Send size={20} className="group-hover:translate-x-1 transition-transform" />
-                <span>Send Message</span>
+                {status.isSubmitting ? (
+                  <Loader size={20} className="animate-spin" />
+                ) : (
+                  <Send size={20} className="group-hover:translate-x-1 transition-transform" />
+                )}
+                <span>{status.isSubmitting ? 'Sending...' : 'Send Message'}</span>
               </button>
             </form>
           </div>

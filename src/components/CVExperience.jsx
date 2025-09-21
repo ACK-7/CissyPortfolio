@@ -175,7 +175,7 @@ const CVExperience = () => {
               </div>
             </div>
 
-            {/* Certifications */}
+            {/* Certifications
             <div>
               <h3 className="text-xl font-semibold mb-6">Certifications</h3>
               <div className="space-y-4">
@@ -192,7 +192,7 @@ const CVExperience = () => {
                   <div className="text-sm text-text-secondary">Construction Safety • 2022</div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Awards */}
             {/* <div>
