@@ -1,28 +1,33 @@
-import React from 'react'
-import { ArrowDown, Download, Eye } from 'lucide-react'
+import React from "react";
+import { ArrowDown, Download, Eye } from "lucide-react";
 
 const Hero = () => {
   const scrollToProjects = () => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-  }
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
-  }
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="hero"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
       <div className="container-max section-padding py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="space-y-8 hero-content">
+          <div className="space-y-8 hero-content order-last lg:order-first">
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-7xl font-bold leading-tight">
                 Hey, I'm Namugambe Cissy!
               </h1>
               <p className="text-xl text-text-secondary max-w-2xl leading-relaxed">
-                Recent architecture graduate specializing in sustainable design 
-                and collaborative project delivery. I bring a unique blend of design thinking, technical expertise, and collaborative leadership to every project.
+                Recent architecture graduate specializing in sustainable design
+                and collaborative project delivery. I bring a unique blend of
+                design thinking, technical expertise, and collaborative
+                leadership to every project.
               </p>
             </div>
 
@@ -63,8 +68,12 @@ const Hero = () => {
           </div>
 
           {/* Visual Element */}
-          <div className="relative hero-visual -mt-15">
-            <img src="/images/cissy.png" alt="hero image" className="h-[550px]" />
+          <div className="relative hero-visual -mt-15 order-first lg:order-last">
+            <img
+              src="/images/cissy.png"
+              alt="hero image"
+              className="w-[550px]"
+            />
           </div>
         </div>
 
@@ -81,7 +90,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
