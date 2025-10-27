@@ -12,29 +12,6 @@ A modern, responsive single-page portfolio website built for architecture gradua
 - **SEO Friendly**: Semantic HTML, meta tags, accessibility features
 - **Employer Focused**: Structured to highlight skills, experience, and measurable outcomes
 
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── Header.jsx              # Navigation with smooth scrolling
-│   ├── Hero.jsx                # Landing section with CTA
-│   ├── About.jsx               # Professional summary & timeline
-│   ├── Skills.jsx              # Technical skills with progress bars
-│   ├── Projects.jsx            # Featured projects grid
-│   ├── ProjectCard.jsx         # Individual project cards
-│   ├── ProjectModal.jsx        # Detailed project view
-│   ├── Process.jsx             # Design process workflow
-│   ├── CVExperience.jsx        # Professional experience timeline
-│   ├── ContactFooter.jsx       # Contact form and information
-│   ├── Footer.jsx              # Site footer
-│   └── LazyImage.jsx           # Optimized image loading
-├── hooks/
-│   └── useGsapAnimations.js    # GSAP animation setup
-├── App.jsx                     # Main application component
-├── main.jsx                    # React entry point
-└── index.css                   # Global styles and Tailwind imports
-```
 
 ## 🛠️ Setup & Installation
 
@@ -144,21 +121,6 @@ This creates a `dist/` folder with optimized production files.
 2. Add to package.json scripts: `"deploy": "gh-pages -d dist"`
 3. Run: `npm run deploy`
 
-## 📋 Content Replacement Checklist
-
-- [ ] Update personal name and title in Header component
-- [ ] Replace professional summary in Hero section
-- [ ] Update about section with your background
-- [ ] Replace project data with your actual projects
-- [ ] Add your project images to public/images/
-- [ ] Update experience timeline with your work history
-- [ ] Modify skills section with your expertise
-- [ ] Replace contact information and social links
-- [ ] Update resume/CV download link
-- [ ] Replace placeholder email addresses
-- [ ] Update meta tags in index.html
-- [ ] Add your actual resume PDF to public/
-
 ## ♿ Accessibility Features
 
 - Semantic HTML structure
@@ -184,27 +146,6 @@ This creates a `dist/` folder with optimized production files.
 - Tablet: 768px - 1024px
 - Desktop: 1024px - 1440px
 - Large Desktop: 1440px+
-
-## 🧪 Testing Checklist
-
-### Performance
-- [ ] Lighthouse score > 90
-- [ ] First Contentful Paint < 2s
-- [ ] Largest Contentful Paint < 2.5s
-- [ ] Cumulative Layout Shift < 0.1
-
-### Accessibility
-- [ ] WCAG 2.1 AA compliance
-- [ ] Keyboard navigation works
-- [ ] Screen reader compatibility
-- [ ] Color contrast ratios pass
-
-### Functionality
-- [ ] All navigation links work
-- [ ] Contact form submits correctly
-- [ ] Project modals open/close
-- [ ] Responsive design on all devices
-- [ ] Animations perform smoothly
 
 ## 📄 Resume/CV Integration
 
@@ -241,14 +182,5 @@ This creates a `dist/` folder with optimized production files.
 - Update dependencies regularly
 - Test on new devices/browsers
 
-## 📞 Support
-
-For questions about customization or deployment:
-- Check the component comments for implementation details
-- Review Tailwind CSS documentation for styling
-- Consult GSAP documentation for animation customization
-- Test thoroughly on multiple devices before deployment
 
 ---
-
-**Built with ❤️ using React, Tailwind CSS, and GSAP**
