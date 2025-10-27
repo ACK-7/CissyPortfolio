@@ -63,7 +63,7 @@ const Hero = () => {
           </div>
 
           {/* Visual Element */}
-          <div className="relative hero-visual -mt-20">
+          <div className="relative hero-visual -mt-15">
             <img src="/images/cissy.png" alt="hero image" className="h-[550px]" />
           </div>
         </div>
