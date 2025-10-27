@@ -2,6 +2,10 @@
 
 A modern, responsive single-page portfolio website built for architecture graduates and professionals. Features a dark theme, smooth animations, and employer-focused content structure.
 
+## 🌐 Live Demo
+
+**[View Live Portfolio →](https://cissyportfolio.netlify.app/)**
+
 ## 🚀 Features
 
 - **Modern Tech Stack**: React 18, Tailwind CSS, GSAP animations
